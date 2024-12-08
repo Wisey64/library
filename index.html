@@ -11,7 +11,7 @@
         <h1>library</h1>
     </div>
     <button class="add">Add</button>
-    <div class="main">
+    <div class="main" id="main">
 
         
     </div>
@@ -49,23 +49,33 @@
            return myLibrary.push(book)
             
 
-
+            const main =document.querySelector("#main");
 
         }
-        addBookToLibrary("someBook","someGuy","55",true)
+        addBookToLibrary("book1","someGuy1","5","read")
+        addBookToLibrary("someBook2","someGuy","55","not yet read")
+        addBookToLibrary("someBook3","someGuy","55",true)
+        addBookToLibrary("someBook4","someGuy","55",true)
+        addBookToLibrary("someBook","someGuy55","855",false)
+        addBookToLibrary("someBook","someGuy","55",false)
+        addBookToLibrary("someBook","someGuy","55",false)
 
         function displayBook(){
-            myLibrary.forEach(element => {
+            myLibrary.forEach((book) => {
             const card =document.createElement("div")
-            div.className("card")
-            const main =document.getElementsByClassName("main");
-            main.append(card)
-            
+            card.className="card"
+            card.innerHTML = `
+                <h2>${book.Name}</h2>
+                <p>Author: ${book.Author}</p>
+                <p>Pages: ${book.Pages}</p>
+                <p>Status: ${book.Read ? "read" : "not yet read"}</p>
+    `;
 
-                
+                main.appendChild(card)
             });
         
         }
+        displayBook(myLibrary)
         
 
         
