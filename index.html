@@ -7,6 +7,14 @@
     <title>library</title>
 </head>
 <body>
+    <div class="nav">
+        <h1>library</h1>
+    </div>
+    <button class="add">Add</button>
+    <div class="main">
+
+        
+    </div>
 
 
 
@@ -15,6 +23,52 @@
 
 
     <script>
+        const myLibrary = [];
+        function Book(bookName,Author,Pages) {
+            this.bookName=bookName
+            this.Author=Author
+            this.Pages=Pages
+        
+        
+        
+
+        }
+
+
+        
+
+        
+        function addBookToLibrary(bookname,author,pages,read) {
+            const book={
+                Name: bookname,
+                Author: author,
+                Pages: pages,
+                Read: read ? "read" : "not yet read",
+
+            }
+           return myLibrary.push(book)
+            
+
+
+
+        }
+        addBookToLibrary("someBook","someGuy","55",true)
+
+        function displayBook(){
+            myLibrary.forEach(element => {
+            const card =document.createElement("div")
+            div.className("card")
+            const main =document.getElementsByClassName("main");
+            main.append(card)
+            
+
+                
+            });
+        
+        }
+        
+
+        
 
     </script>
 </body>
