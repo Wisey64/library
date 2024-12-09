@@ -13,11 +13,11 @@
     <button class="add" id="add" >Add</button>
     <dialog data-modal class="modal">
         <form action="" method="GET">
-            <label for="name">Book Name</label>
-            <input type="text" id="name" name="name">
-            <label for="author">Author</label>
+            <label for="bookname">Book Name :</label>
+            <input type="text" id="bookname" name="bookname">
+            <label for="author">Author :</label>
             <input type="text" id="author" name="author">
-            <label for="pages">Pages</label>
+            <label for="pages">Pages :</label>
             <input type="number" id="pages" name="pages">
             <div class="cj">
                 <label for="status" class="read">Read</label>
@@ -25,8 +25,8 @@
             </div>
             
             <div class="btns">
-                <button type="submit" class="submit">Submit</button>
-            <button data-close-modal formmethod="dialog" class="cancel">Cancel</button>
+                <button type="submit" class="submit" onclick="getValue(event)">Submit</button>
+                <button data-close-modal formmethod="dialog" class="cancel">Cancel</button>
             </div>
             
         </form>
@@ -80,21 +80,22 @@
         addBookToLibrary("someBook","someGuy","55",false)
         addBookToLibrary("someBook","someGuy","55",false)
 
-        function displayBook(){
-            myLibrary.forEach((book) => {
-            const card =document.createElement("div")
-            card.className="card"
-            card.innerHTML = `
-                <h2>${book.Name}</h2>
-                <p>Author: ${book.Author}</p>
-                <p>Pages: ${book.Pages}</p>
-                <p>Status: ${book.Read ? "read" : "not yet read"}</p>
-    `;
+        function displayBook() {
+    const main = document.getElementById("main");
+    main.innerHTML = ""; // Clear existing content
+    myLibrary.forEach((book) => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+            <h2>${book.Name}</h2>
+            <p>Author: ${book.Author}</p>
+            <p>Pages: ${book.Pages}</p>
+            <p>Status: ${book.Read}</p>
+        `;
+        main.appendChild(card);
+    });
+}
 
-                main.appendChild(card)
-            });
-        
-        }
         displayBook(myLibrary)
 
 
@@ -119,7 +120,38 @@ closeBtn.addEventListener("click", () => {
     modal.close();
 });
 
-        
+function getValue(event) {
+    event.preventDefault(); // Prevent form submission
+
+    let bookname = document.getElementById("bookname");
+    let author = document.getElementById("author");
+    let pages = document.getElementById("pages");
+    let status = document.getElementById("status");
+
+    let booknamevalue = bookname.value;
+    let authorvalue = author.value;
+    let pagesvalue = pages.value;
+    let statusvalue = status.checked; // Use checked for checkboxes
+
+    addBookToLibrary(booknamevalue, authorvalue, pagesvalue, statusvalue);
+    displayBook(); // Update the displayed library
+    modal.close();
+
+}
+//function to close the modal when clicked outside of it
+modal.addEventListener("click", e => {
+  const dialogDimensions = modal.getBoundingClientRect()
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    modal.close()
+  }
+})
+
+
 
     </script>
 </body>
