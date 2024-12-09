@@ -10,7 +10,21 @@
     <div class="nav">
         <h1>library</h1>
     </div>
-    <button class="add">Add</button>
+    <button class="add" id="add" >Add</button>
+    <dialog data-modal class="modal">
+        <form action="" method="GET">
+            <input type="text" id="bookname" name="bookname">
+            <label for="name">Book Name</label>
+            <input type="text" id="author" name="author">
+            <label for="author">Author</label>
+            <input type="number" id="pages" name="pages">
+            <label for="pages">Pages</label>
+            <input type="checkbox" id="status" name="status">
+            <label for="status">Read</label>
+            <button type="submit">Submit</button>
+            <button data-close-modal>close</button>
+        </form>
+    </dialog>
     <div class="main" id="main">
 
         
@@ -76,6 +90,23 @@
         
         }
         displayBook(myLibrary)
+
+
+
+
+        const add=document.querySelector("#add")
+        const modal= document.querySelector("[data-modal]")
+        
+        const closebtn = document.querySelector("[data-modal]")
+
+
+        add.addEventListener("click",() => {
+            modal.showModal()
+        })
+
+        closebtn.addEventListener("click", () =>{
+            modal.close()
+        })
         
 
         
