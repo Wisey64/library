@@ -13,16 +13,22 @@
     <button class="add" id="add" >Add</button>
     <dialog data-modal class="modal">
         <form action="" method="GET">
-            <input type="text" id="bookname" name="bookname">
             <label for="name">Book Name</label>
-            <input type="text" id="author" name="author">
+            <input type="text" id="name" name="name">
             <label for="author">Author</label>
-            <input type="number" id="pages" name="pages">
+            <input type="text" id="author" name="author">
             <label for="pages">Pages</label>
+            <input type="number" id="pages" name="pages">
+            <div class="cj">
+                <label for="status" class="read">Read</label>
             <input type="checkbox" id="status" name="status">
-            <label for="status">Read</label>
-            <button type="submit">Submit</button>
-            <button data-close-modal>close</button>
+            </div>
+            
+            <div class="btns">
+                <button type="submit" class="submit">Submit</button>
+            <button data-close-modal formmethod="dialog" class="cancel">Cancel</button>
+            </div>
+            
         </form>
     </dialog>
     <div class="main" id="main">
@@ -94,20 +100,24 @@
 
 
 
-        const add=document.querySelector("#add")
-        const modal= document.querySelector("[data-modal]")
-        
-        const closebtn = document.querySelector("[data-modal]")
+        const add = document.querySelector("#add");
+const modal = document.querySelector("[data-modal]");
+const closeBtn = document.querySelector(".cancel");
 
+// Show the modal when the add button is clicked
+add.addEventListener("click", () => {
+    modal.showModal();
+});
 
-        add.addEventListener("click",() => {
-            modal.showModal()
-        })
+// Prevent clicking outside the modal from closing it
+modal.addEventListener("cancel", (event) => {
+    event.preventDefault();
+});
 
-        closebtn.addEventListener("click", () =>{
-            modal.close()
-        })
-        
+// Close the modal when the cancel button is clicked
+closeBtn.addEventListener("click", () => {
+    modal.close();
+});
 
         
 

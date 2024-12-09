@@ -40,3 +40,77 @@ body{
     width:250px ;
     height: 250px;
 }
+
+.modal{
+    
+    padding: 20px;
+    width:300px ;
+    height: 250px;
+    background-color: bisque;
+}
+
+    
+form{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    width:250px ;
+    height: 250px;
+    gap: 5px;
+
+    
+}
+label{
+    display: flex;
+    align-self: flex-start;
+    margin:5px;
+    margin-left: 0px;
+    font-size: 1.2rem;
+    
+}
+input{
+    width: 243px;
+}
+;
+
+
+.cj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 50px;
+    
+}
+#status{
+    display: inline;
+    width:25px ;
+}
+.read{
+    display: inline;
+}
+.cancel{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(250, 45, 45);
+    border-radius: 20px;
+    border: 1px solid black;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+.submit{
+    width: 80px;
+    height: 30px;
+    background-color: rgba(45, 76, 250, 0.651);
+    border-radius: 20px;
+    border: 1px solid black;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
