@@ -153,8 +153,8 @@ p{
     background-color: rgb(250, 45, 45);
 }
 .remove-btn{
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     background-color: rgba(250, 45, 45, 0.651);
     border-radius: 20px;
     border: none;
@@ -183,7 +183,7 @@ background-color: rgb(250, 45, 45);
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover animation */
     padding: 20px;
     width:250px ;
-    height: 300px
+    height: 350px
 }
 
 /* Add a hover effect for a more interactive feel */
@@ -210,4 +210,19 @@ input[type="number"]:focus {
     border-color: #007bff; /* Highlight border on focus */
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Glow effect on focus */
     outline: none; /* Remove default focus outline */
+}
+.change{
+    width: 100px;
+    height: 40px;
+    background-color: rgba(40, 255, 33, 0.651);
+    border-radius: 20px;
+    border: none;
+    color: #000000b6;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    
+
+}
+.change:hover{
+    background-color:rgb(12, 204, 5)
 }

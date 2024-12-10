@@ -90,9 +90,10 @@
         card.innerHTML = `
             <h2>${book.Name}</h2>
             <p>Author: ${book.Author}</p>
+            <p class="pages">Pages: ${book.Pages}</p>
             <p class="stat" data-index="${index}">Status: ${book.Read}</p>
             <button class="remove-btn" data-index="${index}">Remove</button>
-            <button class="change" data-index="${index}">Change the read status</button>
+            <button class="change" data-index="${index}">Change status</button>
         `;
 
         main.appendChild(card);
