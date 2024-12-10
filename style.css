@@ -2,17 +2,23 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: rgb(255, 228, 196);
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 20px;
 
     
    
     
 }
 .nav{
-    background-color:rgba(195, 196, 142, 0.767) ;
+    background-color:rgb(161, 152, 140);
     display: flex;
     justify-content: center;
+    font-size: 1.2rem;
+    color: #000000e3;
+    letter-spacing: 2px;
     
 }
 .main{
@@ -27,8 +33,23 @@ body{
 }
 .add{
     height: 60px;
-    font-size: 2.5rem;
-    background-color: rgba(92, 245, 186, 0.39);
+    font-size: 2rem;
+    background-color: rgba(0, 238, 255, 0.582);
+    border: none;
+    
+    margin-top: 20px;
+    color: #000000de;
+    border-radius: 8px; /* Smooth corners for a polished look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), /* Subtle shadow at the bottom */
+                0 1px 3px rgba(0, 0, 0, 0.06); /* Slight top shadow for depth */
+                
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover animation */
+}
+.add:hover{
+    transform: translateY(-4px); /* Lift the card slightly */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 
+                0 2px 4px rgba(0, 0, 0, 0.12); /* Stronger shadow when hovering */
 }
 
 
@@ -38,6 +59,10 @@ body{
     width:400px ;
     height: 350px;
     background-color: bisque;
+    padding: 40px;
+    border: none;
+    border-radius: 8px; /* Smooth corners for a polished look */
+    
 }
 
     
@@ -45,11 +70,12 @@ form{
     
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content:center;
+    width: 400px;
+    height: 300px;
     
-    width:250px ;
-    height: 250px;
+    
     gap: 5px;
 
     
@@ -62,11 +88,7 @@ label{
     font-size: 1.2rem;
     
 }
-input{
-    width: 243px;
-    
-}
-;
+
 
 
 .cj{
@@ -76,31 +98,35 @@ input{
     flex-wrap: nowrap;
     width: 50px;
     
+    
 }
 #status{
     display: inline;
-    width:25px ;
+    width:13.5px ;
+    height: 13.5px;
 }
 .read{
     display: inline;
 }
 .cancel{
-    width: 80px;
-    height: 30px;
-    background-color: rgba(250, 45, 45, 0.651);
-    border-radius: 20px;
-    border: 1px solid black;
-    color: #ffffff;
+    width: 100px;
+    height: 50px;
+    background-color: rgba(250, 45, 45, 0.616);
+    border-radius: 5px;
+    border: none;
+    color: #000000;
     font-size: 1.1rem;
+    margin-top: 20px;
 }
 .submit{
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 50px;
     background-color: rgba(45, 76, 250, 0.651);
-    border-radius: 20px;
-    border: 1px solid black;
-    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    color: #000000;
     font-size: 1.1rem;
+    margin-top: 20px;
 }
 
 dialog::backdrop {
@@ -117,7 +143,7 @@ p{
     font-size: 1.2rem;
 }
 .add:hover{
-       background-color:rgba(9, 228, 144, 0.671);
+       background-color:rgb(0, 238, 255);
      
 }
 .submit:hover{
