@@ -14,11 +14,11 @@
     <dialog data-modal class="modal">
         <form action="" method="GET">
             <label for="bookname">Book Name :</label>
-            <input type="text" id="bookname" name="bookname">
+            <input type="text" id="bookname" name="bookname" >
             <label for="author">Author :</label>
-            <input type="text" id="author" name="author">
+            <input type="text" id="author" name="author" >
             <label for="pages">Pages :</label>
-            <input type="number" id="pages" name="pages">
+            <input type="number" id="pages" name="pages" >
             <div class="cj">
                 <label for="status" class="read">Read</label>
             <input type="checkbox" id="status" name="status">
@@ -69,7 +69,7 @@
            return myLibrary.push(book)
             
 
-            const main =document.querySelector("#main");
+            
 
         }
         
@@ -158,8 +158,7 @@ modal.addEventListener("click", e => {
     modal.close()
   }
 })
-let index = myLibrary.findIndex(book => book.name === "book1");
-console.log(index)
+
 
 
     </script>
